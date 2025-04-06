@@ -1,0 +1,528 @@
+/* Apply the custom font to the entire body */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: #f1f2f6; /* Light background */
+  color: #2f3640;
+}
+
+/* Container to ensure the footer is always at the bottom */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Navbar */
+.navbar {
+  background: linear-gradient(135deg, #2f3640 0%, #414b57 100%);
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  color: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  justify-content: space-between; /* ensures space between logo and nav-links */
+}
+
+.navbar .logo {
+  font-weight: 700;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  margin: 0; /* remove any default margins */
+  padding: 0;
+}
+
+.nav-links li {
+  margin: 0;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #ff9f43;
+}
+
+/* Home Page */
+.home-container {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  background: url("https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80")
+    center/cover no-repeat;
+  /* Use your own image or a different URL */
+  position: relative;
+  overflow: hidden;
+}
+
+/* Overlay for better text contrast */
+.home-container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.hero-section {
+  position: relative;
+  text-align: center;
+  color: #fff;
+  max-width: 700px;
+}
+
+.hero-section h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.hero-section p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  line-height: 1.5;
+}
+
+.cta-button {
+  background: linear-gradient(135deg, #ff6b6b, #ff4757);
+  border: none;
+  padding: 0.75rem 2rem;
+  font-size: 1.1rem;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 50px;
+  font-weight: 500;
+  box-shadow: 0 5px 15px rgba(255, 107, 107, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(255, 107, 107, 0.6);
+}
+
+/* Versions Page */
+.versions-container {
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.versions-container h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  font-weight: 700;
+  color: #2f3640;
+}
+
+.version-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.version-card {
+  background: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 2rem;
+  width: 250px;
+  text-align: center;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.version-card:hover {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  transform: translateY(-5px);
+}
+
+.version-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.version-card p {
+  font-size: 0.95rem;
+  color: #57606f;
+  margin-bottom: 1.5rem;
+}
+
+.price {
+  display: block;
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin: 1rem 0;
+  color: #2f3640;
+}
+
+.version-card button {
+  background: linear-gradient(135deg, #ff6b6b, #ff4757);
+  color: #fff;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  cursor: pointer;
+  border-radius: 4px;
+  font-weight: 500;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.version-card button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(255, 107, 107, 0.4);
+}
+
+/* User Manual */
+.user-manual-container {
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.user-manual-container h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.user-manual-container p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  max-width: 700px;
+  margin: 0 auto;
+  color: #57606f;
+}
+
+/* About */
+.about-container {
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.about-container h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.about-container p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  max-width: 700px;
+  margin: 0 auto;
+  color: #57606f;
+}
+
+.contact-link {
+  display: inline-block;
+  margin-top: 1.5rem;
+  color: #ff6b6b;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.contact-link:hover {
+  color: #ff4757;
+  text-decoration: underline;
+}
+
+/* Contact */
+.contact-container {
+  padding: 3rem 2rem;
+  max-width: 600px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.contact-container h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+}
+
+.contact-form label {
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: #2f3640;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-family: "Poppins", sans-serif;
+}
+
+.contact-form button {
+  margin-top: 1.5rem;
+  background: linear-gradient(135deg, #ff6b6b, #ff4757);
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-form button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(255, 107, 107, 0.4);
+}
+
+/* Contact Page Background */
+.contact-page {
+  min-height: calc(100vh - 70px); /* subtract navbar height if needed */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  /* You can use an image or a gradient here */
+  background: url("https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=1920&q=80")
+    center/cover no-repeat;
+}
+
+.contact-page::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5); /* Dark overlay for better contrast */
+}
+
+/* Contact Card */
+.contact-card {
+  position: relative;
+  z-index: 1; /* above the overlay */
+  background: #fff;
+  border-radius: 10px;
+  padding: 2rem;
+  max-width: 500px;
+  width: 90%;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.contact-card h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  color: #2f3640;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1.5rem;
+}
+
+.contact-form label {
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: #2f3640;
+  text-align: left;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-family: "Poppins", sans-serif;
+}
+
+.contact-form button {
+  margin-top: 1.5rem;
+  background: linear-gradient(135deg, #ff6b6b, #ff4757);
+  color: #fff;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-form button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(255, 107, 107, 0.4);
+}
+
+/* Auth Forms (Login & Signup) */
+.auth-container {
+  padding: 3rem 2rem;
+  max-width: 400px;
+  margin: 2rem auto;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.auth-container h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.auth-container form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+}
+
+.auth-container label {
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: #2f3640;
+  text-align: left;
+}
+
+.auth-container input {
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-family: "Poppins", sans-serif;
+}
+
+.auth-container button {
+  margin-top: 1.5rem;
+  background: linear-gradient(135deg, #ff6b6b, #ff4757);
+  color: #fff;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.auth-container button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(255, 107, 107, 0.4);
+}
+
+.error-msg {
+  color: red;
+  font-weight: 500;
+  margin-top: 0.5rem;
+}
+
+/* Auth Pages Background (Login, Signup) */
+.auth-page {
+  min-height: calc(100vh - 70px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  /* background: url('https://images.unsplash.com/photo-1544716278-f150df4d0402?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat; */
+  background: url("https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=1920&q=80")
+    center/cover no-repeat;
+}
+
+.auth-page::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  
+}
+
+.auth-card {
+  position: relative;
+  z-index: 1;
+  background: #fff;
+  border-radius: 10px;
+  padding: 2rem;
+  max-width: 400px;
+  width: 90%;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.auth-card h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  color: #2f3640;
+}
+
+.auth-card form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1.5rem;
+}
+
+.auth-card label {
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: #2f3640;
+  text-align: left;
+}
+
+.auth-card input {
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-family: "Poppins", sans-serif;
+}
+
+.auth-card button {
+  margin-top: 1.5rem;
+  background: linear-gradient(135deg, #ff6b6b, #ff4757);
+  color: #fff;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.auth-card button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(255, 107, 107, 0.4);
+}
+
+/* Footer */
+.footer {
+  background: #2c3e50;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+  margin-top: auto;
+  font-size: 0.9rem;
+}
